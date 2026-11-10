@@ -144,8 +144,9 @@ export default {
         const selectedIndex = Number(input?.selectedIndex);
         const questions = JSON.parse(room.questions_json || "[]");
         const question = questions[questionIndex];
-        if (!playerId || !question || !Number.isInteger(selectedIndex) || selectedIndex < 0 || selectedIndex > 3)
-          return withCors(fail("Câu trả lời không hợp lệ."), request, env);
+        if (!playerId || questionIndex !== room.current_question || !question ||
+            !Number.isInteger(selectedIndex) || selectedIndex < 0 || selectedIndex > 3)
+          return withCors(fail("Câu trả lời không hợp lệ hoặc không đúng câu hiện tại."), request, env);
         const player = await env.DB.prepare("SELECT id FROM players WHERE id=? AND room_code=?").bind(playerId, code).first();
         if (!player) return withCors(fail("Người chơi không thuộc phòng này.", 403), request, env);
         const correct = selectedIndex === question.correctIndex;
