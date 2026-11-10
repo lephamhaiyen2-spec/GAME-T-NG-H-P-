@@ -4,8 +4,8 @@ compatibility_date = "2026-11-10"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "tri-thuc-game"
-database_id = "REPLACE_WITH_D1_DATABASE_ID"
+database_name = "tri-thuc-db"
+database_id = "414990b2-7657-44b7-98af-6efabc353ef5"
 migrations_dir = "migrations"
 
 [[durable_objects.bindings]]
