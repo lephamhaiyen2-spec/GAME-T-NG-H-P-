@@ -160,7 +160,7 @@ export default {
         if (points) await env.DB.prepare("UPDATE players SET score=score+?, last_seen_at=CURRENT_TIMESTAMP WHERE id=?").bind(points, playerId).run();
         const leaderboard = await env.DB.prepare("SELECT id,display_name AS name,team_name AS team,score FROM players WHERE room_code=? ORDER BY score DESC, joined_at ASC").bind(code).all();
         await broadcast(env, code, { type: "answer_recorded", playerId, questionIndex, correct, points, leaderboard: leaderboard.results || [] });
-        return withCors(json({ ok: true, correct, points, leaderboard: leaderboard.results || [] }), request, env);
+        return withCors(json({ ok: true, correct, points, explanation: question.explanation || "", correctIndex: question.correctIndex, leaderboard: leaderboard.results || [] }), request, env);
       }
 
       if (request.method === "POST" && parts[3] === "next") {
@@ -174,6 +174,22 @@ export default {
         const event = finished ? { type: "game_finished", leaderboard: (await env.DB.prepare("SELECT id,display_name AS name,team_name AS team,score FROM players WHERE room_code=? ORDER BY score DESC").bind(code).all()).results } : { type: "question_changed", questionIndex: nextIndex };
         await broadcast(env, code, event);
         return withCors(json({ ok: true, finished, currentQuestion: finished ? room.current_question : nextIndex }), request, env);
+      }
+
+      if (request.method === "GET" && parts[3] === "current-question") {
+        if (room.status !== "playing") return withCors(fail("Phòng chưa bắt đầu.", 409), request, env);
+        const questions = JSON.parse(room.questions_json || "[]");
+        const q = questions[room.current_question];
+        if (!q) return withCors(fail("Không còn câu hỏi." ,404), request, env);
+        return withCors(json({
+          ok: true,
+          question: {
+            index: room.current_question,
+            total: questions.length,
+            question: q.question,
+            options: q.options
+          }
+        }), request, env);
       }
 
       if (request.method === "GET" && parts[3] === "leaderboard") {
