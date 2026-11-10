@@ -11,6 +11,7 @@ Backend dùng Cloudflare Workers + D1 + Durable Objects. Frontend GitHub Pages s
 - `POST /api/rooms/:code/start`: giáo viên bắt đầu phòng (header `x-host-token`).
 - `POST /api/rooms/:code/answer`: ghi nhận câu trả lời và điểm.
 - `POST /api/rooms/:code/next`: chuyển câu / kết thúc phòng (cần `x-host-token`).
+- `GET /api/rooms/:code/current-question`: lấy câu hỏi hiện tại nhưng không tiết lộ đáp án đúng.
 - `GET /api/rooms/:code/leaderboard`: bảng xếp hạng.
 - WebSocket: Durable Object `RoomHub` phát sự kiện người chơi tham gia, bắt đầu game, cập nhật điểm và chuyển câu.
 
