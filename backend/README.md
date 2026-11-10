@@ -38,12 +38,12 @@ Backend dùng Cloudflare Workers + D1 + Durable Objects. Frontend GitHub Pages s
 1. Tạo tài khoản Cloudflare và mở Workers & Pages.
 2. Cài Wrangler trên máy tính: `npm install -g wrangler`.
 3. Đăng nhập: `wrangler login`.
-4. Tạo D1: `wrangler d1 create tri-thuc-game`.
-5. Sao chép `database_id` trả về vào `wrangler.toml`.
-6. Tạo database schema: `wrangler d1 execute tri-thuc-game --remote --file=./migrations/0001_initial.sql`.
-7. Từ thư mục `backend`, triển khai: `wrangler deploy`.
-8. Kiểm tra `https://<worker-name>.<account>.workers.dev/api/health`.
-9. Đặt `ALLOWED_ORIGIN` đúng URL GitHub Pages của website.
+4. D1 database `tri-thuc-db` đã được tạo; `database_id` đã được ghi vào `wrangler.toml`.
+5. Từ thư mục `backend`, cài dependencies bằng `npm install`.
+6. Áp dụng schema từ thư mục `backend`: `npm run db:remote`.
+7. Triển khai Worker: `npm run deploy`.
+8. Kiểm tra `https://tri-thuc-game-api.<account>.workers.dev/api/health`.
+9. Giữ `ALLOWED_ORIGIN` đúng URL GitHub Pages của website.
 
 ## Bảo mật và giới hạn bản đầu
 
