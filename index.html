@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#09152f">
+  <meta name="description" content="Nền tảng trò chơi học tập tương tác dành cho giáo viên và học sinh.">
+  <title>TRI THỨC — Nền tảng game học tập</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Trang chủ TRI THỨC">
+      <span class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4 43 15v18L24 44 5 33V15L24 4Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="m14 17 10-6 10 6v14l-10 6-10-6V17Z" fill="currentColor" opacity=".22"/><path d="m16 25 5 5 11-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span><b>TRI THỨC</b><small>LEARN · PLAY · GROW</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Điều hướng chính">
+      <a class="active" href="#games">Trò chơi</a><a href="#how">Cách chơi</a><a href="#teacher">Dành cho giáo viên</a>
+    </nav>
+    <div class="top-actions"><button class="btn btn-ghost" id="openJoinTop">Tham gia phòng</button><button class="btn btn-primary" id="openTeacherTop">Không gian giáo viên <span>↗</span></button><button class="menu-toggle" id="menuToggle" aria-label="Mở menu">☰</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> NỀN TẢNG HỌC TẬP TƯƠNG TÁC</div>
+        <h1>Học tập không chỉ là ghi nhớ.<br><span>Đó là một cuộc chơi!</span></h1>
+        <p class="hero-desc">Biến mỗi tiết học thành hành trình khám phá. Giáo viên tạo phòng chơi, học sinh tham gia bằng mã QR và cùng chinh phục thử thách tri thức.</p>
+        <div class="hero-actions"><button class="btn btn-primary btn-large" id="exploreGames">Khám phá trò chơi <span>→</span></button><button class="btn btn-outline btn-large" id="openJoinHero"><span class="qr-mini">▦</span> Nhập mã phòng</button></div>
+        <div class="hero-proof"><div class="avatar-stack"><i>👩🏻‍🏫</i><i>🧑🏻‍🎓</i><i>👨🏽‍🎓</i><i>👩🏽‍🎓</i></div><div><b>Một không gian – nhiều cách học</b><small>Dành cho lớp học năng động</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-tag tag-top"><span>✦</span> CHINH PHỤC TRI THỨC</div>
+        <div class="hero-core"><div class="core-glow"></div><div class="core-icon">✧</div><div class="core-title">PLAY<br><em>TO</em> LEARN</div><div class="core-sub">Mỗi câu hỏi · Một bước tiến</div></div>
+        <div class="float-card score-card"><span class="float-icon">⚡</span><div><b>+120 XP</b><small>Bứt phá điểm số</small></div></div>
+        <div class="float-card team-card"><span class="team-emoji">🚀</span><div><b>Đội tiên phong</b><small>Sẵn sàng xuất phát!</small></div></div>
+        <div class="spark spark-a">✦</div><div class="spark spark-b">✧</div><div class="spark spark-c">✦</div>
+      </div>
+      <div class="hero-bottom"><span><i></i> HỌC QUA TRẢI NGHIỆM</span><span>THỬ THÁCH · KẾT NỐI · TỎA SÁNG</span><span>01 / 04</span></div>
+    </section>
+
+    <section class="quick-strip" aria-label="Tính năng nền tảng">
+      <div><span class="quick-icon cyan">▦</span><span><b>Vào phòng bằng QR</b><small>Tham gia nhanh chóng</small></span></div>
+      <div><span class="quick-icon violet">♟</span><span><b>Chơi theo đội</b><small>Kết nối cả lớp học</small></span></div>
+      <div><span class="quick-icon orange">✦</span><span><b>Thử thách đa dạng</b><small>Nhiều cách chinh phục</small></span></div>
+      <div><span class="quick-icon green">↗</span><span><b>Theo dõi kết quả</b><small>Ghi nhận tiến bộ</small></span></div>
+    </section>
+
+    <section class="section games-section" id="games">
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> THƯ VIỆN TRÒ CHƠI</div><h2>Chọn thử thách.<br><span>Bật chế độ chinh phục.</span></h2></div><p>Mỗi trò chơi là một cách tiếp cận kiến thức khác nhau. Hãy chọn hành trình phù hợp với tiết học hôm nay.</p></div>
+      <div class="filter-row"><div class="filter-pills" id="gameFilters"><button class="filter active" data-filter="all">Tất cả <span>04</span></button><button class="filter" data-filter="team">Đồng đội</button><button class="filter" data-filter="speed">Tốc độ</button><button class="filter" data-filter="logic">Tư duy</button></div><span class="results-label">BỘ SƯU TẬP KHỞI ĐẦU <b>· 04 GAME</b></span></div>
+      <div class="game-grid" id="gameGrid">
+        <article class="game-card featured" data-type="team" data-game="boat">
+          <div class="game-visual boat-visual"><span class="visual-label">NỔI BẬT</span><div class="sun-disc"></div><div class="wave wave-back"></div><div class="wave wave-front"></div><div class="boat">⛵</div><div class="buoy">✦</div><span class="visual-number">01</span></div>
+          <div class="game-info"><div class="game-meta"><span>ĐỒNG ĐỘI</span><span>◷ 10–20 PHÚT</span></div><h3>Đua thuyền tri thức</h3><p>Vượt sóng câu hỏi, phối hợp đồng đội và đưa con thuyền về đích.</p><div class="game-footer"><span class="players">♟ Nhiều đội chơi</span><button class="icon-btn play-game" aria-label="Chơi Đua thuyền tri thức" data-game="boat">↗</button></div></div>
+        </article>
+        <article class="game-card" data-type="logic" data-game="mountain">
+          <div class="game-visual mountain-visual"><span class="visual-label">BỨT PHÁ</span><div class="mountain m1"></div><div class="mountain m2"></div><div class="flag">⚑</div><div class="climber">🧗</div><span class="visual-number">02</span></div>
+          <div class="game-info"><div class="game-meta"><span>TƯ DUY</span><span>◷ 10–15 PHÚT</span></div><h3>Chinh phục đỉnh núi</h3><p>Giải mã từng thử thách để tiến gần hơn đến đỉnh cao tri thức.</p><div class="game-footer"><span class="players">♟ Cá nhân / đội</span><button class="icon-btn play-game" aria-label="Chơi Chinh phục đỉnh núi" data-game="mountain">↗</button></div></div>
+        </article>
+        <article class="game-card" data-type="speed" data-game="millionaire">
+          <div class="game-visual million-visual"><span class="visual-label">ĐẤU TRÍ</span><div class="spotlight"></div><div class="million-orb">?</div><div class="coin coin-a">✦</div><div class="coin coin-b">✧</div><span class="visual-number">03</span></div>
+          <div class="game-info"><div class="game-meta"><span>TỐC ĐỘ</span><span>◷ 5–15 PHÚT</span></div><h3>Ai là triệu phú?</h3><p>Vận dụng kiến thức, chọn đáp án chính xác và chạm đến mốc cao nhất.</p><div class="game-footer"><span class="players">♟ Cá nhân</span><button class="icon-btn play-game" aria-label="Chơi Ai là triệu phú" data-game="millionaire">↗</button></div></div>
+        </article>
+        <article class="game-card" data-type="logic" data-game="mystery">
+          <div class="game-visual mystery-visual"><span class="visual-label">KHÁM PHÁ</span><div class="mystery-ring"></div><div class="mystery-crystal">◇</div><div class="mystery-stars">✧　✦　·</div><span class="visual-number">04</span></div>
+          <div class="game-info"><div class="game-meta"><span>GIẢI MÃ</span><span>◷ 8–15 PHÚT</span></div><h3>Giải mã bí ẩn</h3><p>Kết nối manh mối, khám phá quy luật và mở khóa câu trả lời.</p><div class="game-footer"><span class="players">♟ Cá nhân / đội</span><button class="icon-btn play-game" aria-label="Chơi Giải mã bí ẩn" data-game="mystery">↗</button></div></div>
+        </article>
+      </div>
+      <div class="coming-note"><span>✳</span><div><b>Thư viện sẽ tiếp tục được mở rộng</b><small>Các trò chơi mới có thể bổ sung mà không cần tạo website riêng.</small></div><span class="coming-arrow">MORE GAMES →</span></div>
+    </section>
+
+    <section class="join-banner" id="how">
+      <div class="join-copy"><div class="eyebrow"><span class="eyebrow-line"></span> SẴN SÀNG THAM GIA?</div><h2>Một mã phòng.<br><span>Cả lớp cùng chơi.</span></h2><p>Học sinh chỉ cần nhập mã phòng hoặc quét QR do giáo viên cung cấp. Không cần cài đặt ứng dụng.</p><button class="btn btn-primary btn-large" id="openJoinBanner">Tham gia ngay <span>→</span></button></div>
+      <div class="join-steps"><div class="step"><span>01</span><div><b>Giáo viên tạo phòng</b><small>Chọn trò chơi và bộ câu hỏi</small></div><i>✦</i></div><div class="step"><span>02</span><div><b>Học sinh quét QR</b><small>Nhập tên và chọn đội chơi</small></div><i>▦</i></div><div class="step"><span>03</span><div><b>Cùng chinh phục</b><small>Trả lời, tích điểm và xem kết quả</small></div><i>↗</i></div><div class="qr-decoration"><div class="qr-pattern">▦</div><small>SCAN TO PLAY</small></div></div>
+    </section>
+
+    <section class="teacher-section section" id="teacher">
+      <div class="teacher-card"><div class="teacher-symbol">✎</div><div class="teacher-text"><div class="eyebrow"><span class="eyebrow-line"></span> KHÔNG GIAN GIÁO VIÊN</div><h2>Chủ động thiết kế<br>một tiết học đáng nhớ.</h2><p>Tạo phòng chơi, quản lý câu hỏi, tùy chỉnh thời gian và theo dõi kết quả học tập trong cùng một không gian.</p><div class="teacher-features"><span>✓ Ngân hàng câu hỏi</span><span>✓ Nhập câu hỏi từ tệp</span><span>✓ Quản lý đội chơi</span><span>✓ Bảng xếp hạng</span></div><button class="btn btn-dark" id="openTeacherMain">Mở không gian giáo viên <span>→</span></button></div><div class="teacher-preview"><div class="preview-top"><span>TEACHER DASHBOARD</span><span class="preview-live"><i></i> LIVE PREVIEW</span></div><div class="preview-stat"><div><small>PHÒNG ĐANG CHƠI</small><b>03</b></div><div><small>NGƯỜI THAM GIA</small><b>86</b></div><div><small>BỘ CÂU HỎI</small><b>12</b></div></div><div class="preview-chart"><div class="chart-label">MỨC ĐỘ THAM GIA <span>+24%</span></div><div class="bars"><i style="height:34%"></i><i style="height:52%"></i><i style="height:43%"></i><i style="height:78%"></i><i style="height:62%"></i><i style="height:92%"></i><i style="height:73%"></i><i style="height:100%"></i><i style="height:84%"></i><i style="height:67%"></i><i style="height:88%"></i><i style="height:95%"></i></div></div><div class="preview-bottom"><span>✦ Tương tác tích cực</span><span>● Đang cập nhật</span></div></div></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">✧</span><span><b>TRI THỨC</b><small>LEARN · PLAY · GROW</small></span></a><p>Học bằng trải nghiệm. Lớn lên cùng tri thức.</p><span>© 2026 TRI THỨC PLATFORM</span></footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="closeModal" aria-label="Đóng">×</button><div id="modalContent"></div></section>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
