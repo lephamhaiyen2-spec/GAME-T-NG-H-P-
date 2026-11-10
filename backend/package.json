@@ -1,12 +1,12 @@
 {
-  "name": "tri-thuc-game-api",
+  "name": "tri-thuc-db-api",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "db:local": "wrangler d1 execute tri-thuc-game --local --file=./migrations/0001_initial.sql",
-    "db:remote": "wrangler d1 execute tri-thuc-game --remote --file=./migrations/0001_initial.sql"
+    "db:local": "wrangler d1 execute tri-thuc-db --local --file=./migrations/0001_initial.sql",
+    "db:remote": "wrangler d1 execute tri-thuc-db --remote --file=./migrations/0001_initial.sql"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
