@@ -104,6 +104,11 @@ export default {
         return withCors(json({ ok: true, room: await publicRoom(env, room) }), request, env);
       }
 
+      if (request.method === "GET" && parts[3] === "ws" && request.headers.get("Upgrade") === "websocket") {
+        const stub = env.ROOMS.get(env.ROOMS.idFromName(code));
+        return stub.fetch("https://room.internal/connect", request);
+      }
+
       if (request.method === "POST" && parts[3] === "join") {
         if (room.status !== "waiting") return withCors(fail("Phòng đã bắt đầu hoặc kết thúc.", 409), request, env);
         const input = await body(request);
